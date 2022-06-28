@@ -15,7 +15,6 @@ else:
 
 if lastdigit > 5:
     print("Last digit of {} is {:d} and is greater than 5"
-       
             .format(number, lastdigit))
 
 if lastdigit == 0:
@@ -23,5 +22,4 @@ if lastdigit == 0:
 
 elif lastdigit < 6 != 0:
     print("Last digit of {} is {:d} and is less than 6 and not 0"
-        
             .format(number, lastdigit))
