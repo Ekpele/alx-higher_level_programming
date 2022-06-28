@@ -2,22 +2,19 @@
 import random
 number = random.randint(-10000, 10000)
 
-# Verify if the number is positive and get the last digit
+print("Last digit of {:d} is ".format(number), end="")
 
-if number >= 0:
-
-    lastdigit = number % 10
-
-# If the number is negative we multiply by a negative to have a positive number
+if number < 0:
+last = number % -10
 
 else:
-    lastdigit = number % (-10)
+last = number % 10
 
-if lastdigit > 5:
-    print("Last digit of {} is {:d} and is greater than 5".format(number, lastdigit))
+if last > 5:
+    print("{:d} and is greater than 5".format(last))
 
-if lastdigit == 0:
-    print("Last digit of {} is {:d} and is 0".format(number, lastdigit))
+elif last == 0:
+    print("{:d} and is 0".format(last))
 
-elif lastdigit < 6 != 0:
-    print("Last digit of {} is {:d} and is less than 6 and not 0".format(number, lastdigit))
+else:
+    print("{:d} and is less than 6 and not 0".format(last))
