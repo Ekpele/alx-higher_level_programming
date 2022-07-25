@@ -3,7 +3,6 @@
     Module containing functions to search for solutions to N-queens problem.
 """
 
-
 def all_possible(n=4):
     """ Function to find all possible solutions by placing the first queen on
         the first row, with different column positions starting from 2nd
@@ -19,7 +18,6 @@ def all_possible(n=4):
         col = [z for z in range(n)]
         col.remove(i)
         recur_bt(matrix, 1, col, n)
-
 
 def recur_bt(matrix, row, col, n):
     """
@@ -62,7 +60,6 @@ def recur_bt(matrix, row, col, n):
                 matrix.remove([i, j])
     return None
 
-
 def bot_right(matrix, y, x, n):
     """
         Function to test if there are any queens on the bottom right diagonal.
@@ -84,7 +81,6 @@ def bot_right(matrix, y, x, n):
             y += 1
             x += 1
     return True
-
 
 def bot_left(matrix, y, x, n):
     """
@@ -108,7 +104,6 @@ def bot_left(matrix, y, x, n):
             x -= 1
     return True
 
-
 def top_left(matrix, y, x, n):
     """
         Function to test if there are any queens on the top left diagonal.
@@ -129,7 +124,6 @@ def top_left(matrix, y, x, n):
             y -= 1
             x -= 1
     return True
-
 
 def top_right(matrix, y, x, n):
     """
