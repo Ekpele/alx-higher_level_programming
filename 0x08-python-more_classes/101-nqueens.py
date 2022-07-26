@@ -3,6 +3,7 @@
     Module containing functions to search for solutions to N-queens problem.
 """
 
+
 def all_possible(n=4):
     """ Function to find all possible solutions by placing the first queen on
         the first row, with different column positions starting from 2nd
@@ -18,6 +19,7 @@ def all_possible(n=4):
         col = [z for z in range(n)]
         col.remove(i)
         recur_bt(matrix, 1, col, n)
+
 
 def recur_bt(matrix, row, col, n):
     """
@@ -46,11 +48,11 @@ def recur_bt(matrix, row, col, n):
     if row:
         i = row
         for j in col:
-                if (not bot_right(matrix, i + 1, j + 1, n) or
+            if (not bot_right(matrix, i + 1, j + 1, n) or
                     not bot_left(matrix, i + 1, j - 1, n) or
                     not top_left(matrix, i - 1, j - 1, n) or
                         not top_right(matrix, i - 1, j + 1, n)):
-                        continue
+                continue
                 matrix.append([i, j])
                 new_col = list(col)
                 new_col.remove(j)
@@ -59,6 +61,7 @@ def recur_bt(matrix, row, col, n):
                     print(matrix)
                 matrix.remove([i, j])
     return None
+
 
 def bot_right(matrix, y, x, n):
     """
@@ -82,6 +85,7 @@ def bot_right(matrix, y, x, n):
             x += 1
     return True
 
+
 def bot_left(matrix, y, x, n):
     """
         Function to test if there are any queens on the bottom left diagonal.
@@ -104,6 +108,7 @@ def bot_left(matrix, y, x, n):
             x -= 1
     return True
 
+
 def top_left(matrix, y, x, n):
     """
         Function to test if there are any queens on the top left diagonal.
@@ -124,6 +129,7 @@ def top_left(matrix, y, x, n):
             y -= 1
             x -= 1
     return True
+
 
 def top_right(matrix, y, x, n):
     """
@@ -146,9 +152,10 @@ def top_right(matrix, y, x, n):
             x += 1
     return True
 
+
 if __name__ == "__main__":
     from sys import argv
-    if len(argv) is not 2:
+    if len(argv) != 2:
         print("Usage: nqueens N")
         exit(1)
     try:
