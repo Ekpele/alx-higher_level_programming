@@ -10,6 +10,7 @@ class LockedClass:
         for `first_name`.
     """
 
+
     def __setattr__(self, name, value):
         """
             Override the reserved method `setattr` to prevent instance
@@ -22,6 +23,7 @@ class LockedClass:
         if name != "first_name":
             raise AttributeError("'LockedClass' object has no attribute '" +
                                  name + "'")
+
 
             def __getattribute__(self, name):
         """
